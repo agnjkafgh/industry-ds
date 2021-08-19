@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Industrial App</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Sensor Usage</h1>
+    <form name="form1" method="POST" action="/output">
+      <table>
+          <tr>
+            <td>Equipment ID</td>
+            <td>
+              <select name="equipmentId">
+                <% dataset.Equipments.forEach(function(e) { %>
+                    <option><%= e %></option>
+                <% }); %>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>From Time (HH:MM)</td>
+            <td><input type="time" name="startTime" ></td>
+          </tr>
+          <tr>
+            <td>To Time (HH:MM)</td>
+            <td><input type="time" name="endTime" ></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="submit" value="Go" ></td>
+          </tr>
+      </table>
+      </form>   
+  </body>
+</html>
